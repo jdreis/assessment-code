@@ -1,23 +1,79 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
-
-// First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
-
-// We'll use these variables to track the counts of each cookie type
-let gb = 0      // Ginger bread
-let cc = 0      // Chocolate Chip
-let sugar = 0   // Sugar Sprinkle
-
-// Code to update name display 
+// NAME
+let yourName = "Jena Reis" // HINT: Replace this with your own name!
 document.getElementById('credit').textContent = `Created by ${yourName}`
 
-// Event listener for clicks on the "+" button for Ginger Bread cookies
-document.getElementById('add-gb').addEventListener('click', function() {
-    // HINT: You can delete this console.log after you no longer need it!
-    console.log('Ginger bread + button was clicked!')
+// COOKIE VARIABLES
+let gb = 0      
+let cc = 0      
+let sugar = 0   
 
-    // TODO: Write the code to be run when the "+" button for "Ginger Bread" is clicked
+// GB BUTTONS
+document.getElementById('add-gb').addEventListener('click', function(){
+    gb++
+    document.getElementById('qty-gb').innerHTML = gb
+    document.getElementById('qty-total').innerHTML = gb + cc + sugar
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+document.getElementById('minus-gb').addEventListener('click', function(){
+    if (gb > 0){
+        gb--
+        document.getElementById('qty-gb').innerHTML = gb
+        document.getElementById('qty-total').innerHTML = gb + sugar + cc
+    }
+})
+
+
+// CC BUTTONS
+document.getElementById('add-cc').addEventListener('click', function(){
+    cc++
+    document.getElementById('qty-cc').innerHTML = cc
+    document.getElementById('qty-total').innerHTML = gb + cc + sugar
+})
+
+document.getElementById('minus-cc').addEventListener('click', function(){
+    if (cc > 0) {
+        cc--
+        document.getElementById('qty-cc').innerHTML = cc
+        document.getElementById('qty-total').innerHTML = gb + cc + sugar
+    }
+})
+
+
+// SUGAR BUTTONS
+document.getElementById('add-sugar').addEventListener('click', function(){
+    sugar++
+    document.getElementById('qty-sugar').innerHTML = sugar
+    document.getElementById('qty-total').innerHTML = gb + sugar + cc
+})
+
+document.getElementById('minus-sugar').addEventListener('click', function(){
+    if (sugar > 0){
+        sugar--
+        document.getElementById('qty-sugar').innerHTML = sugar
+        document.getElementById('qty-total').innerHTML = gb + cc + sugar
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
